@@ -13,10 +13,10 @@ AFRAME.registerComponent("create-markers", {
       marker.setAttribute("markerhandler", {});
       mainScene.appendChild(marker);
 
-      // Getting today's day
+      // Obtener el día actual
       var todaysDate = new Date();
       var todaysDay = todaysDate.getDay();
-      // Sunday - Saturday : 0 - 6
+      // Domingo - Sábado : 0 - 6
       var days = [
         "sunday",
         "monday",
@@ -28,7 +28,7 @@ AFRAME.registerComponent("create-markers", {
       ];
 
       if (!dish.unavailable_days.includes(days[todaysDay])) {
-        // Adding 3D model to scene
+        // Agregar modelos 3D a la escena
         var model = document.createElement("a-entity");
         model.setAttribute("id", `model-${dish.id}`);
         model.setAttribute("position", dish.position);
@@ -39,7 +39,7 @@ AFRAME.registerComponent("create-markers", {
         model.setAttribute("visible", false);
         marker.appendChild(model);
 
-        // Ingredients Container
+        // Contenedor de ingredientes
         var mainPlane = document.createElement("a-plane");
         mainPlane.setAttribute("id", `main-plane-${dish.id}`);
         mainPlane.setAttribute("position", { x: 0, y: 0, z: 0 });
@@ -49,7 +49,7 @@ AFRAME.registerComponent("create-markers", {
         mainPlane.setAttribute("visible", false);
         marker.appendChild(mainPlane);
 
-        // Dish title background plane
+        // Plano de fondo del título del platillo
         var titlePlane = document.createElement("a-plane");
         titlePlane.setAttribute("id", `title-plane-${dish.id}`);
         titlePlane.setAttribute("position", { x: 0, y: 0.89, z: 0.02 });
@@ -59,7 +59,7 @@ AFRAME.registerComponent("create-markers", {
         titlePlane.setAttribute("material", { color: "#F0C30F" });
         mainPlane.appendChild(titlePlane);
 
-        // Dish title
+        // Título del platillo
         var dishTitle = document.createElement("a-entity");
         dishTitle.setAttribute("id", `dish-title-${dish.id}`);
         dishTitle.setAttribute("position", { x: 0, y: 0, z: 0.1 });
@@ -74,7 +74,7 @@ AFRAME.registerComponent("create-markers", {
         });
         titlePlane.appendChild(dishTitle);
 
-        // Ingredients List
+        // Lista de ingredientes
         var ingredients = document.createElement("a-entity");
         ingredients.setAttribute("id", `ingredients-${dish.id}`);
         ingredients.setAttribute("position", { x: 0.3, y: 0, z: 0.1 });
@@ -88,7 +88,7 @@ AFRAME.registerComponent("create-markers", {
         });
         mainPlane.appendChild(ingredients);
 
-        // Dish Price
+        // Precio del platillo
         var pricePlane = document.createElement("a-image");
         pricePlane.setAttribute("id", `price-plane-${dish.id}`);
         pricePlane.setAttribute(
@@ -116,18 +116,18 @@ AFRAME.registerComponent("create-markers", {
         pricePlane.appendChild(price);
         marker.appendChild(pricePlane);
         
-        //ADD CODE HERE
+        // AGREGAR CÓDIGO AQUÍ
         
-        // Dish Rating plane
-        
-
-        // Ratings
+        // Plano de la calificación del platillo
         
 
-        // Dish review plane
+        // Calificaciones
+        
+
+        // Plano de la reseña del platillo
         
        
-        // Dish review
+        // Reseña del platillo
         
       }
     });
