@@ -71,7 +71,7 @@ AFRAME.registerComponent("markerhandler", {
 
       model.setAttribute("visible", true);
 
-      // Haver al contenedor de ingredientes visible
+      // Hacer al contenedor de ingredientes visible
       var ingredientsContainer = document.querySelector(
         `#main-plane-${dish.id}`
       );
